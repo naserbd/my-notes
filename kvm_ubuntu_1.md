@@ -1,6 +1,5 @@
 # KVM Virtualization — Engineer's Reference Notes
 > Ubuntu 20.04 / 22.04 LTS · libvirt · virt-manager · virt-install  
-> Last updated: 2024 | For internal/secondary memory use
 > Md Abdullah Al Naser
 
 ---
