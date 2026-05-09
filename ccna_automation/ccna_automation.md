@@ -1,808 +1,758 @@
-# 🚀 CCNA Automation (200-901) — 14-Day Study Plan
-
-> **Goal:** Become an automation practitioner, not just pass the exam.
-> **Daily commitment:** ~3–4 hours (1.5h theory + 1.5–2h hands-on + 30min notes to GitHub)
-> **Structure:** Theory → Lab → Document to GitHub
+# 🚀 CCNA Automation (200-901) — 30-Day Study Plan
+> **Goal:** Pass the 200-901 exam and become a network automation practitioner.  
+> **Daily commitment:** ~2–3 hours | **Format:** Theory + Hands-on every day  
+> **GitHub:** Used as your Second Brain — notes, code, and labs all live here.
 
 ---
 
-## 🗂️ GitHub Second Brain Setup (Do This on Day 0)
+## 🗂️ GitHub Second Brain Setup (Do This on Day 1 — First 30 Minutes)
 
-Before starting, create a GitHub repo called `ccna-auto-notes`. Use this structure:
+### Repo Structure
+Create a public or private repo called `ccna-automation-notes`:
 
 ```
-ccna-auto-notes/
-├── README.md                  # Your master index
+ccna-automation-notes/
+├── README.md                    ← Master index + progress tracker
 ├── 01-software-dev-design/
-│   ├── data-formats.md
-│   ├── git-cheatsheet.md
-│   └── design-patterns.md
+│   ├── notes.md
+│   ├── data-formats/
+│   │   ├── xml-example.xml
+│   │   ├── json-example.json
+│   │   └── yaml-example.yaml
+│   └── git-cheatsheet.md
 ├── 02-apis/
-│   ├── rest-api-notes.md
+│   ├── notes.md
 │   ├── http-codes.md
 │   └── scripts/
+│       └── rest_api_example.py
 ├── 03-cisco-platforms/
-│   ├── meraki.md
-│   ├── catalyst-center.md
+│   ├── notes.md
 │   └── scripts/
 ├── 04-app-deployment-security/
-│   ├── docker-notes.md
-│   ├── cicd.md
-│   └── owasp.md
+│   ├── notes.md
+│   └── dockerfiles/
 ├── 05-infrastructure-automation/
-│   ├── ansible-notes.md
-│   ├── terraform-notes.md
-│   ├── yang-restconf-netconf.md
-│   └── playbooks/
+│   ├── notes.md
+│   ├── ansible-playbooks/
+│   └── yang-models/
 ├── 06-network-fundamentals/
-│   └── networking-review.md
-└── daily-logs/
-    ├── day-01.md
-    └── ...
+│   └── notes.md
+├── labs/
+│   └── README.md                ← Lab index with outcomes
+└── cheatsheets/
+    ├── http-codes.md
+    ├── port-numbers.md
+    ├── git-commands.md
+    └── python-snippets.md
 ```
 
-### Daily GitHub Ritual (30 min each evening)
-1. Open today's `daily-logs/day-XX.md`
-2. Write: *What I learned, commands I used, things that confused me, 3 key takeaways*
-3. Copy any scripts/configs into the relevant folder
-4. `git add . && git commit -m "Day XX: <topic>" && git push`
-
-### Note Template (save as `_template.md`)
+### README.md Progress Tracker Template
 ```markdown
-# Topic Name
-**Date:** YYYY-MM-DD | **Exam Section:** X.X
+# CCNA Automation Study Progress
 
-## What It Is (1-sentence definition)
+| Domain | Weight | Status | Notes |
+|--------|--------|--------|-------|
+| 1.0 Software Dev & Design | 15% | 🔲 | |
+| 2.0 APIs | 20% | 🔲 | |
+| 3.0 Cisco Platforms | 15% | 🔲 | |
+| 4.0 App Deployment & Security | 15% | 🔲 | |
+| 5.0 Infrastructure & Automation | 20% | 🔲 | |
+| 6.0 Network Fundamentals | 15% | 🔲 | |
 
-## How It Works (bullet points)
+Legend: 🔲 Not started | 🟡 In progress | ✅ Done
+```
 
-## Key Commands / Code
+### Daily Git Workflow (Non-Negotiable Habit)
 ```bash
-# paste your actual commands here
+# End of every study session:
+git add .
+git commit -m "Day X: <what you learned/built>"
+git push
 ```
-
-## Real-World Analogy
-
-## Gotchas & Exam Tips
-
-## Resources Used
-```
+This builds a visible streak and forces you to name what you learned.
 
 ---
 
-## 📅 Day-by-Day Study Plan
+## 📅 The 30-Day Plan
 
 ---
 
-### DAY 1 — Git & Version Control + Environment Setup
-**Exam coverage:** 1.7, 1.8 (15% domain)
+### WEEK 1 — Foundations (Days 1–7)
+**Theme:** Get the scaffolding right. Network fundamentals + Python + Git + Data Formats.
 
-#### Theory (1.5h)
-- Why version control matters for automation engineers
-- Git workflow: working tree → staging → commit → remote
-- Branching strategies (feature branches, main/dev split)
-- Merge vs. rebase, handling conflicts
+---
 
-#### Hands-On (2h)
+#### Day 1 — Setup + Network Fundamentals Foundations
+**Topics:** 6.1, 6.2, 6.3 | Git setup
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | Set up GitHub repo (Second Brain structure above) |
+| 0:30–1:15 | Study MAC addresses, VLANs, IP addresses, subnets, gateways (6.1, 6.2) |
+| 1:15–2:00 | Study switching, routing, firewalls, load balancers (6.3) |
+| 2:00–2:30 | **Hands-on:** Draw a small network topology on paper OR use draw.io |
+
+**GitHub commit:** `notes/06-network-fundamentals/notes.md` — summary of OSI-relevant concepts, subnet table, VLAN use cases.
+
+---
+
+#### Day 2 — Network Planes + IP Services + Topology Reading
+**Topics:** 6.4, 6.5, 6.6, 6.7
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Study management/data/control planes (6.5); IP services: DHCP, DNS, NAT, SNMP, NTP (6.6) |
+| 0:45–1:30 | Common port numbers: SSH(22), Telnet(23), HTTP(80), HTTPS(443), NETCONF(830) (6.7) |
+| 1:30–2:15 | **Hands-on:** Interpret 2–3 network topology diagrams (find on Cisco DevNet or Google) |
+| 2:15–2:30 | Build `cheatsheets/port-numbers.md` in your repo |
+
+**GitHub commit:** Port numbers cheatsheet + topology diagram notes.
+
+---
+
+#### Day 3 — Connectivity Troubleshooting + Data Formats (XML, JSON, YAML)
+**Topics:** 6.8, 6.9, 1.1
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | NAT problems, blocked ports, proxy, VPN impact on apps (6.8, 6.9) |
+| 0:30–1:30 | Compare XML vs JSON vs YAML: syntax, use cases, pros/cons (1.1) |
+| 1:30–2:30 | **Hands-on:** Write the same config data in all three formats. Save examples to your repo. |
+
+**Sample task:** Represent a router config (hostname, interfaces, IP addresses) in XML, JSON, and YAML.
+
+**GitHub commit:** `01-software-dev-design/data-formats/` with all three files.
+
+---
+
+#### Day 4 — Parsing Data Formats with Python
+**Topics:** 1.2
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | Read about Python's `xml.etree`, `json`, and `pyyaml` libraries |
+| 0:30–2:00 | **Hands-on:** Write Python scripts to parse each format from Day 3 |
+| 2:00–2:30 | Document the parsing patterns in `notes.md` |
+
+**Code to write:**
+```python
+# json_parse.py
+import json
+with open("config.json") as f:
+    data = json.load(f)
+print(data["hostname"])
+
+# yaml_parse.py
+import yaml
+with open("config.yaml") as f:
+    data = yaml.safe_load(f)
+
+# xml_parse.py
+import xml.etree.ElementTree as ET
+tree = ET.parse("config.xml")
+root = tree.getroot()
+```
+
+**GitHub commit:** Three parsing scripts in `01-software-dev-design/data-formats/`.
+
+---
+
+#### Day 5 — Git Deep Dive
+**Topics:** 1.7, 1.8 (a–g)
+
+| Time | Activity |
+|------|----------|
+| 0:00–1:00 | Study version control concepts + all Git operations (clone, add, commit, push/pull, branch, merge, diff) |
+| 1:00–2:30 | **Hands-on Lab:** Practice every Git operation on your study repo |
+
+**Git lab sequence:**
 ```bash
-# Install Git, Python 3, VS Code, Docker (get these ready today)
-git init my-ccna-lab
-cd my-ccna-lab
-git remote add origin https://github.com/YOUR_USERNAME/ccna-auto-notes
-git checkout -b feature/day1-test
-echo "# Test" > test.md
-git add test.md
-git commit -m "feat: initial commit"
-git push origin feature/day1-test
+git clone <your-repo>
+git checkout -b feature/day5-git-lab
+# make changes
+git add .
+git commit -m "Day 5: Git lab practice"
+git diff main feature/day5-git-lab
 git checkout main
-git merge feature/day1-test
-# Intentionally create a merge conflict and resolve it
-git diff HEAD~1 HEAD
+git merge feature/day5-git-lab
+# Introduce a conflict intentionally and resolve it
+git log --oneline --graph
 ```
 
-#### GitHub Note to Write
-- `01-software-dev-design/git-cheatsheet.md` — every command you used today with a one-line explanation
+**GitHub commit:** `cheatsheets/git-commands.md` with every command and what it does.
 
 ---
 
-### DAY 2 — Data Formats: XML, JSON, YAML + Python Parsing
-**Exam coverage:** 1.1, 1.2
+#### Day 6 — Software Dev Methods + Design Patterns + TDD
+**Topics:** 1.3, 1.4, 1.5, 1.6
 
-#### Theory (1.5h)
-- JSON: key-value, arrays, nesting — used by REST APIs
-- XML: tags, attributes, namespaces — used by NETCONF
-- YAML: indentation-based — used by Ansible playbooks
-- When each format is used in network automation
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Agile vs Lean vs Waterfall — compare with a table (1.4) |
+| 0:45–1:15 | Functions/classes/modules — why structure code this way (1.5) |
+| 1:15–1:45 | MVC and Observer design patterns (1.6) |
+| 1:45–2:30 | **Hands-on:** Write a tiny Python module with a class, then import it from another script |
 
-#### Hands-On (2h)
-```python
-# parse_formats.py — save this to 01-software-dev-design/scripts/
-import json, yaml
-from xml.etree import ElementTree as ET
-
-# JSON
-device = '{"hostname": "R1", "ip": "10.0.0.1", "interfaces": ["Gi0/0", "Gi0/1"]}'
-data = json.loads(device)
-print(data["interfaces"][0])  # Gi0/0
-
-# YAML (pip install pyyaml)
-yaml_data = """
-hostname: R1
-interfaces:
-  - name: Gi0/0
-    ip: 10.0.0.1
-"""
-parsed = yaml.safe_load(yaml_data)
-print(parsed["interfaces"][0]["ip"])
-
-# XML
-xml_data = """<device><hostname>R1</hostname><ip>10.0.0.1</ip></device>"""
-root = ET.fromstring(xml_data)
-print(root.find("hostname").text)
-```
-
-#### GitHub Note to Write
-- `01-software-dev-design/data-formats.md` — comparison table of JSON vs XML vs YAML with examples
+**GitHub commit:** Python module example + comparison table for dev methods.
 
 ---
 
-### DAY 3 — Software Dev Methods + Design Patterns + TDD
-**Exam coverage:** 1.3, 1.4, 1.5, 1.6
+#### Day 7 — Week 1 Review + Second Brain Update
+| Time | Activity |
+|------|----------|
+| 0:00–1:00 | Review all Week 1 notes. Fill in any gaps. |
+| 1:00–1:45 | Take 20-question practice quiz (use Cisco DevNet Learning Labs or Anki) |
+| 1:45–2:30 | **Update your GitHub README** — mark Week 1 topics done, write 3-bullet summary per domain |
 
-#### Theory (1.5h)
-- **Agile:** iterative sprints, working software over documentation
-- **Lean:** eliminate waste, continuous improvement
-- **Waterfall:** sequential phases, rigid requirements upfront
-- **TDD:** write test first → code fails → make it pass → refactor
-- **MVC:** Model (data), View (UI), Controller (logic) — separation of concerns
-- **Observer pattern:** event-driven, publisher/subscriber — like webhooks
-
-#### Hands-On (2h)
-```python
-# tdd_example.py — write the TEST before the function
-import unittest
-
-class TestNetworkValidator(unittest.TestCase):
-    def test_valid_ip(self):
-        self.assertTrue(is_valid_ip("192.168.1.1"))
-    def test_invalid_ip(self):
-        self.assertFalse(is_valid_ip("999.999.999.999"))
-    def test_private_range(self):
-        self.assertTrue(is_private_ip("10.0.0.1"))
-
-# NOW write the function to make tests pass
-import ipaddress
-def is_valid_ip(ip):
-    try:
-        ipaddress.ip_address(ip)
-        return True
-    except ValueError:
-        return False
-
-def is_private_ip(ip):
-    return ipaddress.ip_address(ip).is_private
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
-#### GitHub Note to Write
-- `01-software-dev-design/design-patterns.md` — MVC diagram, Observer example, TDD cycle
+**Reflection prompt in your notes:** *"What from this week do I need to revisit? What clicked immediately?"*
 
 ---
 
-### DAY 4 — REST APIs Deep Dive
-**Exam coverage:** 2.1, 2.3, 2.4, 2.5, 2.6, 2.8
+### WEEK 2 — APIs (Days 8–14)
+**Theme:** The heaviest exam weight (20%). Master REST, HTTP, Python requests.
 
-#### Theory (1.5h)
-- REST constraints: stateless, client-server, uniform interface, cacheable
-- HTTP methods: GET, POST, PUT, PATCH, DELETE
-- HTTP response codes to memorise:
-  - 200 OK, 201 Created, 204 No Content
-  - 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found
-  - 429 Too Many Requests (rate limiting), 500 Internal Server Error
-- REST vs RPC, synchronous vs asynchronous APIs
-- HTTP response anatomy: status line, headers (Content-Type, Auth), body
+---
 
-#### Hands-On (2h)
+#### Day 8 — HTTP Fundamentals + REST Concepts
+**Topics:** 2.4, 2.6, 2.8
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | HTTP response codes: 2xx, 3xx, 4xx, 5xx — know them cold (2.4) |
+| 0:45–1:30 | HTTP response anatomy: status line, headers, body (2.6) |
+| 1:30–2:30 | **Hands-on:** Use `curl` or browser DevTools to inspect real HTTP responses |
+
+```bash
+curl -I https://httpbin.org/get         # headers only
+curl -v https://httpbin.org/status/404  # verbose — see the full exchange
+curl https://httpbin.org/get | python3 -m json.tool
+```
+
+**GitHub commit:** `cheatsheets/http-codes.md` — table of codes with meanings and common API causes.
+
+---
+
+#### Day 9 — REST API Requests + Authentication
+**Topics:** 2.1, 2.7
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | REST principles: stateless, resource-based URLs, HTTP verbs (GET/POST/PUT/DELETE/PATCH) |
+| 0:45–1:30 | Auth mechanisms: Basic auth, API keys, Bearer tokens (2.7) |
+| 1:30–2:30 | **Hands-on:** Make authenticated requests to a public API |
+
+**Lab:** Use `https://api.github.com` (free, needs only a token):
+```bash
+# Get your own profile
+curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/user
+
+# Create a repo via API (POST)
+curl -X POST -H "Authorization: token YOUR_TOKEN" \
+  -d '{"name":"api-test","private":false}' \
+  https://api.github.com/user/repos
+```
+
+**GitHub commit:** Document the auth patterns with code examples.
+
+---
+
+#### Day 10 — Python Requests Library
+**Topics:** 2.9
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | Read the `requests` library docs overview |
+| 0:30–2:30 | **Hands-on:** Build a Python script that does GET, POST, handles auth, and parses response |
+
+**Code to build:**
 ```python
-# Use a free public API — no setup needed
 import requests
 
-# GET request
-response = requests.get("https://jsonplaceholder.typicode.com/users/1")
-print(f"Status: {response.status_code}")
-print(f"Headers: {response.headers['Content-Type']}")
-print(f"Body: {response.json()['name']}")
+BASE_URL = "https://httpbin.org"
 
-# POST request
-new_device = {"name": "Router1", "ip": "10.0.0.1"}
-r = requests.post(
-    "https://jsonplaceholder.typicode.com/posts",
-    json=new_device,
-    headers={"Content-Type": "application/json"}
+# GET with query params
+resp = requests.get(f"{BASE_URL}/get", params={"name": "cisco"})
+print(resp.status_code)
+print(resp.json())
+
+# POST with JSON body
+resp = requests.post(f"{BASE_URL}/post",
+    json={"device": "router1", "ip": "10.0.0.1"},
+    headers={"Authorization": "Bearer mytoken123"})
+
+# Error handling
+resp.raise_for_status()  # raises on 4xx/5xx
+```
+
+**GitHub commit:** `02-apis/scripts/rest_client.py` — reusable REST client template.
+
+---
+
+#### Day 11 — API Troubleshooting + Webhooks + Constraints
+**Topics:** 2.2, 2.3, 2.5
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Webhooks: push vs pull, event-driven, use cases (2.2) |
+| 0:45–1:15 | API constraints: rate limiting, pagination, timeouts, versioning (2.3) |
+| 1:15–2:30 | **Hands-on:** Build a script that handles rate limiting with retry logic |
+
+```python
+import requests, time
+
+def api_call_with_retry(url, retries=3):
+    for i in range(retries):
+        resp = requests.get(url)
+        if resp.status_code == 429:
+            wait = int(resp.headers.get("Retry-After", 2))
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        return resp.json()
+    raise Exception("Max retries exceeded")
+```
+
+**GitHub commit:** Retry pattern + webhook diagram in notes.
+
+---
+
+#### Day 12 — API Styles + Cisco DevNet Sandbox Intro
+**Topics:** 2.8, 3.7
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | REST vs RPC vs Synchronous vs Asynchronous APIs — comparison table (2.8) |
+| 0:45–2:30 | **Hands-on:** Sign up at https://devnetsandbox.cisco.com — reserve the "Always-On" Cisco Catalyst Center or Meraki sandbox |
+
+**DevNet Resources to bookmark:**
+- Sandbox: `https://devnetsandbox.cisco.com`
+- Code Exchange: `https://developer.cisco.com/codeexchange/`
+- Learning Labs: `https://developer.cisco.com/learning/`
+- API Docs: `https://developer.cisco.com/docs/`
+
+**GitHub commit:** Resource index in `03-cisco-platforms/devnet-resources.md`.
+
+---
+
+#### Day 13 — Practice API Calls Against Real Cisco APIs
+**Topics:** 2.1, 2.5 (applied)
+
+| Time | Activity |
+|------|----------|
+| All session | **Hands-on Lab:** Use Cisco DevNet Always-On Catalyst Center sandbox |
+
+**Lab tasks:**
+```python
+# Authenticate to Cisco Catalyst Center
+import requests, base64
+
+DNAC = "https://sandboxdnac.cisco.com"  # DevNet always-on
+creds = base64.b64encode(b"devnetuser:Cisco123!").decode()
+
+auth = requests.post(f"{DNAC}/dna/system/api/v1/auth/token",
+    headers={"Authorization": f"Basic {creds}"})
+token = auth.json()["Token"]
+
+# Get network devices
+devices = requests.get(f"{DNAC}/dna/intent/api/v1/network-device",
+    headers={"X-Auth-Token": token})
+print(devices.json())
+```
+
+**GitHub commit:** Working Catalyst Center script in `03-cisco-platforms/scripts/`.
+
+---
+
+#### Day 14 — Week 2 Review + API Cheatsheet
+| Time | Activity |
+|------|----------|
+| 0:00–1:00 | Review all API notes. Write 1-paragraph summary per topic. |
+| 1:00–2:00 | Build the ultimate API cheatsheet in your repo |
+| 2:00–2:30 | 20-question practice quiz focused on HTTP/REST |
+
+**GitHub commit:** `cheatsheets/api-patterns.md` — the document you'll open on exam day morning.
+
+---
+
+### WEEK 3 — Cisco Platforms + App Deployment & Security (Days 15–21)
+
+---
+
+#### Day 15 — Cisco Network Platforms Overview
+**Topics:** 3.2
+
+| Time | Activity |
+|------|----------|
+| 0:00–1:30 | Study each platform: Meraki, Catalyst Center (DNAC), ACI, SD-WAN, NSO — capabilities, use cases, API style |
+| 1:30–2:30 | **Hands-on:** Browse each platform's API docs and note 3 key endpoints per platform |
+
+**Platform Summary Table to build in notes:**
+
+| Platform | What it manages | API type | Key endpoint example |
+|----------|----------------|----------|---------------------|
+| Meraki | Cloud-managed networks | REST | `/organizations/{orgId}/devices` |
+| Catalyst Center | Campus networks | REST | `/dna/intent/api/v1/network-device` |
+| ACI | Data center fabric | REST | `/api/node/class/fvTenant.json` |
+| SD-WAN | WAN automation | REST | `/dataservice/device` |
+| NSO | Multi-vendor orchestration | RESTCONF/NETCONF | `/restconf/data/devices` |
+
+---
+
+#### Day 16 — Cisco Compute + Collaboration + Security Platforms
+**Topics:** 3.3, 3.4, 3.5
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | UCS Manager + Intersight (3.3) |
+| 0:45–1:30 | Webex, CUCM/AXL/UDS APIs (3.4) |
+| 1:30–2:30 | **Hands-on:** Send a Webex message via API |
+
+```python
+import requests
+
+WEBEX_TOKEN = "YOUR_BOT_TOKEN"  # Create free bot at developer.webex.com
+ROOM_ID = "YOUR_ROOM_ID"
+
+requests.post("https://webexapis.com/v1/messages",
+    headers={"Authorization": f"Bearer {WEBEX_TOKEN}"},
+    json={"roomId": ROOM_ID, "text": "Hello from my automation script! 🤖"})
+```
+
+**GitHub commit:** Webex messaging script in `03-cisco-platforms/scripts/`.
+
+---
+
+#### Day 17 — Model-Driven Programmability (YANG, RESTCONF, NETCONF)
+**Topics:** 3.6, 3.8
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | YANG data modeling basics — modules, leaves, containers, lists |
+| 0:45–1:30 | NETCONF (XML over SSH, port 830) vs RESTCONF (HTTP-based) |
+| 1:30–2:30 | **Hands-on:** Make a RESTCONF call to IOS XE DevNet sandbox |
+
+```python
+import requests
+
+DEVICE = "https://sandbox-iosxe-latest-1.cisco.com"
+# Credentials from DevNet sandbox page
+
+resp = requests.get(
+    f"{DEVICE}/restconf/data/ietf-interfaces:interfaces",
+    auth=("developer", "C1sco12345"),
+    headers={"Accept": "application/yang-data+json"}
 )
-print(f"Created: {r.status_code} — {r.json()}")
-
-# Error handling pattern you'll use everywhere
-def api_call(url, token):
-    try:
-        r = requests.get(url, headers={"Authorization": f"Bearer {token}"}, timeout=10)
-        r.raise_for_status()
-        return r.json()
-    except requests.exceptions.HTTPError as e:
-        print(f"HTTP Error {r.status_code}: {e}")
-    except requests.exceptions.ConnectionError:
-        print("Cannot reach server")
+print(resp.json())
 ```
 
-#### GitHub Note to Write
-- `02-apis/rest-api-notes.md` — HTTP methods table, status codes cheat sheet, your error-handling template
+**GitHub commit:** RESTCONF example + YANG model notes with annotated examples.
 
 ---
 
-### DAY 5 — API Authentication + Webhooks + Python Requests Library
-**Exam coverage:** 2.2, 2.7, 2.9
+#### Day 18 — Cloud Deployment Models + CI/CD Concepts
+**Topics:** 4.1, 4.2, 4.3, 4.4, 4.12
 
-#### Theory (1h)
-- **Basic Auth:** Base64(username:password) in Authorization header — avoid in production
-- **API Keys:** passed in header or query param (`?api_key=xxx`)
-- **Token Auth (Bearer):** login → get token → use token in requests
-- **Webhooks:** server calls YOU when event happens (reverse API) — used in Webex, Meraki alerts
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Private/public/hybrid cloud + edge computing (4.1, 4.2) |
+| 0:45–1:15 | VMs vs bare metal vs containers (4.3) |
+| 1:15–2:00 | CI/CD pipeline components: source control → build → test → deploy (4.4) |
+| 2:00–2:30 | DevOps principles: collaboration, automation, feedback loops (4.12) |
 
-#### Hands-On (2h)
-```python
-# auth_patterns.py
-import requests
-import base64
-
-BASE_URL = "https://sandboxdnac.cisco.com"  # Cisco DevNet Always-On Sandbox
-
-# 1. Basic Auth → get token
-def get_token():
-    credentials = base64.b64encode(b"devnetuser:Cisco123!").decode()
-    r = requests.post(
-        f"{BASE_URL}/dna/system/api/v1/auth/token",
-        headers={"Authorization": f"Basic {credentials}",
-                 "Content-Type": "application/json"}
-    )
-    return r.json()["Token"]
-
-# 2. Use token for subsequent calls
-token = get_token()
-r = requests.get(
-    f"{BASE_URL}/dna/intent/api/v1/network-device",
-    headers={"X-Auth-Token": token}
-)
-devices = r.json()["response"]
-for d in devices[:3]:
-    print(f"{d['hostname']} — {d['managementIpAddress']}")
-```
-
-> **DevNet Sandbox:** Sign up free at developer.cisco.com/sandbox — always-on sandboxes need no reservation
-
-#### GitHub Note to Write
-- `02-apis/http-codes.md` + add `02-apis/scripts/auth_patterns.py`
+**GitHub commit:** Diagram/table comparing deployment models in `04-app-deployment-security/notes.md`.
 
 ---
 
-### DAY 6 — Cisco Catalyst Center + Meraki APIs
-**Exam coverage:** 3.2, 3.9.a, 3.9.c
+#### Day 19 — Docker Hands-On
+**Topics:** 4.6, 4.7
 
-#### Theory (1.5h)
-- **Cisco Catalyst Center:** network controller for campus/branch, intent-based networking
-  - APIs: `/dna/intent/api/v1/` — devices, topology, issues, site management
-- **Meraki:** cloud-managed networking, Dashboard API
-  - API key in `X-Cisco-Meraki-API-Key` header
-  - `/api/v1/organizations` → `/networks` → `/devices`
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | Understand Dockerfile structure: FROM, RUN, COPY, EXPOSE, CMD |
+| 0:30–2:30 | **Hands-on:** Build and run a Docker container with a Python script inside |
 
-#### Hands-On (2h)
-```python
-# meraki_devices.py — use Meraki DevNet Sandbox
-import requests
-
-MERAKI_KEY = "6bec40cf957de430a6f1f2baa056b99a4fac9ea"  # DevNet demo key
-BASE = "https://api.meraki.com/api/v1"
-
-headers = {"X-Cisco-Meraki-API-Key": MERAKI_KEY, "Content-Type": "application/json"}
-
-# Get organizations
-orgs = requests.get(f"{BASE}/organizations", headers=headers).json()
-org_id = orgs[0]["id"]
-print(f"Org: {orgs[0]['name']}")
-
-# Get networks
-networks = requests.get(f"{BASE}/organizations/{org_id}/networks", headers=headers).json()
-net_id = networks[0]["id"]
-
-# Get devices
-devices = requests.get(f"{BASE}/networks/{net_id}/devices", headers=headers).json()
-for d in devices:
-    print(f"{d.get('name','?')} — {d.get('model')} — {d.get('lanIp','N/A')}")
-
-# Get clients (exam topic 3.9.c)
-clients = requests.get(f"{BASE}/networks/{net_id}/clients",
-                       params={"timespan": 86400}, headers=headers).json()
-print(f"Clients seen in last 24h: {len(clients)}")
-```
-
-#### GitHub Note to Write
-- `03-cisco-platforms/meraki.md` and `catalyst-center.md` with API endpoint patterns
-
----
-
-### DAY 7 — Review Day + Webex API + ACI Overview
-**Exam coverage:** 3.4, 3.9.b, 3.2 (ACI)
-
-#### Morning: Review (1h)
-- Re-read your GitHub notes from Days 1–6
-- Quiz yourself on HTTP status codes and Git commands
-- Fix any gaps or errors in your notes
-
-#### Theory (1h)
-- **Webex API:** manage rooms (spaces), members, messages
-  - Bearer token auth, base URL: `https://webexapis.com/v1/`
-- **ACI:** application-centric infrastructure, policy-based SDN
-  - REST API, JSON/XML, tenant → app profile → EPG hierarchy
-
-#### Hands-On (2h)
-```python
-# webex_bot.py — get free token at developer.webex.com
-import requests
-
-TOKEN = "YOUR_WEBEX_TOKEN"
-BASE = "https://webexapis.com/v1"
-headers = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json"}
-
-# List rooms (spaces) — exam 3.9.b
-rooms = requests.get(f"{BASE}/rooms", headers=headers).json()
-for r in rooms["items"][:3]:
-    print(f"Room: {r['title']} — ID: {r['id']}")
-
-# Send a message
-room_id = rooms["items"][0]["id"]
-msg = requests.post(f"{BASE}/messages",
-    headers=headers,
-    json={"roomId": room_id, "text": "Hello from my automation script!"}
-)
-print(f"Message sent: {msg.status_code}")
-
-# List participants
-members = requests.get(f"{BASE}/memberships",
-                       params={"roomId": room_id}, headers=headers).json()
-for m in members["items"]:
-    print(f"  Member: {m.get('personDisplayName')}")
-```
-
-#### GitHub Note to Write
-- `03-cisco-platforms/webex-api.md` with endpoint reference
-
----
-
-### DAY 8 — Docker, Containers, and Application Deployment
-**Exam coverage:** 4.1–4.7, 4.12
-
-#### Theory (1.5h)
-- **VMs vs Containers vs Bare Metal** — resource isolation levels
-- **Docker:** image (template) → container (running instance)
-- **Dockerfile:** FROM, RUN, COPY, EXPOSE, CMD/ENTRYPOINT
-- **Cloud models:** private, public, hybrid, edge
-- **DevOps principles:** culture of collaboration, automation, fast feedback
-- **Edge computing:** process data near source, reduce latency
-
-#### Hands-On (2h)
+**Lab:**
 ```dockerfile
-# Dockerfile — containerize your Meraki script
+# Dockerfile
 FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY meraki_devices.py .
-ENV MERAKI_API_KEY=""
-CMD ["python", "meraki_devices.py"]
+RUN pip install -r requirements.txt
+COPY rest_client.py .
+CMD ["python", "rest_client.py"]
 ```
-
 ```bash
-# Build and run
-docker build -t meraki-checker .
-docker run -e MERAKI_API_KEY=your_key_here meraki-checker
-
-# Useful Docker commands to know
-docker images          # list images
-docker ps              # running containers
-docker ps -a           # all containers
-docker logs <id>       # container output
-docker exec -it <id> bash  # shell into container
-docker stop <id>
-docker rm <id>
-docker rmi <image>
+docker build -t my-automation-app .
+docker run my-automation-app
+docker ps
+docker logs <container_id>
+docker exec -it <container_id> /bin/bash
 ```
 
-#### GitHub Note to Write
-- `04-app-deployment-security/docker-notes.md` — Dockerfile anatomy, commands cheat sheet
+**GitHub commit:** Dockerfile + Docker cheatsheet in `04-app-deployment-security/dockerfiles/`.
 
 ---
 
-### DAY 9 — Security: OWASP, Secrets, Encryption + CI/CD
-**Exam coverage:** 4.4, 4.8, 4.9, 4.10
+#### Day 20 — Security + Python Unit Testing + Bash
+**Topics:** 4.5, 4.8, 4.9, 4.10, 4.11
 
-#### Theory (1.5h)
-- **OWASP Top threats for automation:**
-  - XSS (Cross-Site Scripting): inject malicious scripts into web output
-  - SQL Injection: malicious SQL in user input fields
-  - CSRF: trick user's browser into making unwanted requests
-- **Secret protection:** never hardcode API keys — use env vars or vaults
-- **Encryption:** TLS in transport, AES/RSA at rest
-- **CI/CD Pipeline stages:** Source → Build → Test → Deploy
-- **Firewall/LB/Proxy in deployments:** DMZ, health checks, SSL termination
+| Time | Activity |
+|------|----------|
+| 0:00–0:30 | OWASP top threats: XSS, SQLi, CSRF — definitions + prevention (4.10) |
+| 0:30–1:00 | Secret protection, encryption at rest/transit, env vars (4.8) |
+| 1:00–1:30 | Firewall, DNS, load balancers, reverse proxies in deployment (4.9) |
+| 1:30–2:30 | **Hands-on:** Write Python unit tests + Bash file management scripts |
 
-#### Hands-On (2h)
 ```python
-# SECURE script — secrets from environment variables
-import os, requests, unittest
+# test_parser.py
+import unittest
+from my_parser import parse_device_config
 
-# WRONG — never do this:  API_KEY = "abc123secretkey"
-
-# RIGHT — read from environment
-API_KEY = os.environ.get("MERAKI_API_KEY")
-if not API_KEY:
-    raise EnvironmentError("MERAKI_API_KEY not set. Export it first.")
-
-class TestSecretHandling(unittest.TestCase):
-    def test_no_hardcoded_key(self):
-        key = os.environ.get("MERAKI_API_KEY", "")
-        self.assertNotEqual(key, "", "API key must be set in environment")
-
-    def test_https_only(self):
-        url = "https://api.meraki.com/api/v1/organizations"
-        self.assertTrue(url.startswith("https://"), "Always use HTTPS")
+class TestParser(unittest.TestCase):
+    def test_hostname_extracted(self):
+        data = '{"hostname": "Router1", "ip": "10.0.0.1"}'
+        result = parse_device_config(data)
+        self.assertEqual(result["hostname"], "Router1")
 
 if __name__ == "__main__":
     unittest.main()
 ```
 
 ```bash
-# .env approach (NEVER commit .env to git!)
-echo "MERAKI_API_KEY=yourkey" > .env
-echo ".env" >> .gitignore      # critical!
-export $(cat .env | xargs)     # load into shell
+#!/bin/bash
+# Bash lab: file management
+mkdir -p /tmp/lab/backups
+for f in /tmp/lab/*.cfg; do cp "$f" /tmp/lab/backups/; done
+export BACKUP_PATH="/tmp/lab/backups"
+echo "Backed up to $BACKUP_PATH"
+ls -la $BACKUP_PATH
 ```
 
-#### GitHub Note to Write
-- `04-app-deployment-security/owasp.md` + `cicd.md` with pipeline diagram
+**GitHub commit:** Unit test file + bash script in their respective folders.
 
 ---
 
-### DAY 10 — YANG, NETCONF, and RESTCONF
-**Exam coverage:** 3.8, 5.1, 5.10, 5.11
+#### Day 21 — Week 3 Review + Platform Summary Cards
+| Time | Activity |
+|------|----------|
+| 0:00–1:30 | Review Weeks 1–3. Focus on weak spots. |
+| 1:30–2:30 | Create one-page "platform cards" for each Cisco platform in your notes |
 
-#### Theory (1.5h)
-- **YANG:** data modelling language — defines the structure of config/state data
-  - `container`, `list`, `leaf`, `leaf-list` are core constructs
-- **NETCONF:** XML-based protocol over SSH (port 830) to configure devices
-  - Operations: `<get>`, `<get-config>`, `<edit-config>`, `<commit>`
-  - Datastores: `running`, `candidate`, `startup`
-- **RESTCONF:** REST interface for YANG models (HTTP/HTTPS)
-  - GET/PUT/POST/DELETE on YANG paths
-  - Media type: `application/yang-data+json`
-
-#### Hands-On (2h)
-```python
-# restconf_query.py — Cisco DevNet Always-On IOS XE sandbox
-import requests
-requests.packages.urllib3.disable_warnings()
-
-DEVICE = "sandbox-iosxe-latest-1.cisco.com"
-AUTH = ("developer", "lastorangerestoreball8876")
-BASE = f"https://{DEVICE}/restconf/data"
-HEADERS = {
-    "Accept": "application/yang-data+json",
-    "Content-Type": "application/yang-data+json"
-}
-
-# Get all interfaces
-r = requests.get(f"{BASE}/ietf-interfaces:interfaces",
-                 auth=AUTH, headers=HEADERS, verify=False)
-interfaces = r.json()["ietf-interfaces:interfaces"]["interface"]
-for iface in interfaces[:5]:
-    print(f"{iface['name']} — enabled: {iface.get('enabled', 'N/A')}")
-
-# Get specific interface
-r2 = requests.get(
-    f"{BASE}/ietf-interfaces:interfaces/interface=GigabitEthernet1",
-    auth=AUTH, headers=HEADERS, verify=False)
-print(r2.json())
-```
-
-```yang
-# Basic YANG model to interpret (exam 5.11)
-module cisco-device {
-  namespace "http://cisco.com/device";
-  prefix dev;
-
-  container interfaces {
-    list interface {
-      key "name";
-      leaf name { type string; }
-      leaf description { type string; }
-      leaf enabled { type boolean; default true; }
-      leaf ip-address { type string; }
-    }
-  }
-}
-```
-
-#### GitHub Note to Write
-- `05-infrastructure-automation/yang-restconf-netconf.md` with protocol comparison table
+**GitHub commit:** Platform summary cards + update README progress tracker.
 
 ---
 
-### DAY 11 — Ansible for Network Automation
-**Exam coverage:** 5.6, 5.8
+### WEEK 4 — Infrastructure Automation + Final Review (Days 22–30)
 
-#### Theory (1.5h)
-- **Ansible concepts:** agentless, SSH/API based, idempotent
-- **Inventory:** list of managed hosts
-- **Playbook structure:** play → tasks → modules
-- **Key modules:** `ios_command`, `ios_config`, `uri`, `debug`, `copy`, `service`
-- **Variables:** `vars`, `host_vars`, `group_vars`, `register`
+---
 
-#### Hands-On (2h)
+#### Day 22 — Ansible Fundamentals
+**Topics:** 5.6, 5.8
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Ansible concepts: inventory, playbooks, modules, tasks, roles |
+| 0:45–2:30 | **Hands-on:** Install Ansible, write and run a basic playbook |
+
 ```yaml
-# network_playbook.yml — interpret this for the exam
+# site.yaml
 ---
-- name: Configure and verify network devices
-  hosts: routers
-  gather_facts: no
-  vars:
-    ntp_server: "10.0.0.1"
-
+- name: Configure web servers
+  hosts: webservers
+  become: yes
   tasks:
-    - name: Set NTP server
-      cisco.ios.ios_config:
-        lines:
-          - "ntp server {{ ntp_server }}"
-
-    - name: Get interface status
-      cisco.ios.ios_command:
-        commands: "show ip interface brief"
-      register: int_output
-
-    - name: Display interfaces
-      debug:
-        var: int_output.stdout_lines
-
-    - name: Save config
-      cisco.ios.ios_config:
-        save_when: always
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
 ```
-
-```yaml
-# inventory.yml
-all:
-  children:
-    routers:
-      hosts:
-        R1:
-          ansible_host: 10.0.0.1
-          ansible_user: admin
-          ansible_network_os: ios
-```
-
 ```bash
-# Ansible commands
-ansible-playbook -i inventory.yml network_playbook.yml
-ansible-playbook -i inventory.yml network_playbook.yml --check  # dry run
-ansible-playbook -i inventory.yml network_playbook.yml -v       # verbose
+ansible-playbook -i inventory.ini site.yaml --check  # dry run
+ansible-playbook -i inventory.ini site.yaml
 ```
 
-#### GitHub Note to Write
-- `05-infrastructure-automation/ansible-notes.md` — playbook anatomy + module reference
+**GitHub commit:** Ansible playbook in `05-infrastructure-automation/ansible-playbooks/`.
 
 ---
 
-### DAY 12 — Terraform + NSO + Infrastructure as Code
-**Exam coverage:** 5.5, 5.6, 5.2, 5.3, 5.4
+#### Day 23 — Terraform + Infrastructure as Code
+**Topics:** 5.5, 5.6
 
-#### Theory (1.5h)
-- **Infrastructure as Code (IaC):** define infra in version-controlled files
-- **Terraform:** declarative, provider-based, `plan` → `apply` → `destroy`
-  - HCL syntax, state file, providers (AWS, Meraki, ACI)
-- **NSO:** multi-vendor service orchestration, YANG models, NEDs
-- **Controller-level vs device-level management**
-- **Cisco Modeling Labs (CML) + pyATS:** network simulation and testing
-- **CI/CD for infrastructure:** commit → lint → test → deploy
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | IaC principles: declarative, idempotent, version-controlled infrastructure |
+| 0:45–2:30 | **Hands-on:** Install Terraform, write a basic config (local file provider or AWS free tier) |
 
-#### Hands-On (2h)
 ```hcl
-# main.tf — Terraform HCL to interpret for exam
+# main.tf - local file example (no cloud needed)
 terraform {
   required_providers {
-    meraki = {
-      source  = "cisco-open/meraki"
-      version = "~> 0.1"
-    }
+    local = { source = "hashicorp/local" }
   }
 }
 
-provider "meraki" {
-  meraki_api_key = var.meraki_api_key
-}
-
-variable "meraki_api_key" {
-  description = "Meraki Dashboard API key"
-  type        = string
-  sensitive   = true        # won't show in logs
-}
-
-resource "meraki_networks_switch_port" "access_port" {
-  network_id  = "L_123456"
-  port_id     = "5"
-  name        = "Employee-Desk-5"
-  vlan        = 100
-  type        = "access"
-  enabled     = true
-}
-
-output "port_name" {
-  value = meraki_networks_switch_port.access_port.name
+resource "local_file" "device_config" {
+  filename = "./device.cfg"
+  content  = "hostname Router1\ninterface GigabitEthernet0/0\n ip address 10.0.0.1 255.255.255.0"
 }
 ```
-
 ```bash
-# Terraform workflow
-terraform init      # download providers
-terraform plan      # show what will change
-terraform apply     # make changes
-terraform destroy   # tear down
-terraform show      # current state
+terraform init
+terraform plan
+terraform apply
+terraform destroy
 ```
 
-#### GitHub Note to Write
-- `05-infrastructure-automation/terraform-notes.md` — IaC principles, Terraform workflow, NSO vs Ansible comparison
+**GitHub commit:** Terraform example in `05-infrastructure-automation/`.
 
 ---
 
-### DAY 13 — Network Fundamentals + Bash Scripting
-**Exam coverage:** 5.9, 6.0 (all), 4.11
+#### Day 24 — YANG Models + RESTCONF/NETCONF Results
+**Topics:** 5.1, 5.10, 5.11
 
-#### Theory (1.5h)
-- **Networking review:** MAC/VLANs, IP/subnets, routing
-- **Management/Control/Data planes:** how network devices process traffic
-- **IP Services:** DHCP, DNS, NAT, SNMP, NTP — purpose and port numbers
-- **Key ports:** SSH(22), Telnet(23), HTTP(80), HTTPS(443), NETCONF(830), SNMP(161)
-- **Connectivity troubleshooting:** NAT, blocked ports, proxy bypass, VPN split-tunnel
+| Time | Activity |
+|------|----------|
+| 0:00–1:00 | Read and interpret YANG model syntax (module, container, leaf, list, types) |
+| 1:00–2:30 | **Hands-on:** Query IOS XE via RESTCONF, interpret the JSON/XML output |
 
-#### Hands-On (2h)
-```bash
-#!/bin/bash
-# network_check.sh — bash automation script (exam 5.9, 4.11)
-
-DEVICES=("10.0.0.1" "10.0.0.2" "10.0.0.3")
-LOG_DIR="/var/log/network-checks"
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-LOG_FILE="$LOG_DIR/check_$TIMESTAMP.log"
-
-# File management + directory navigation
-mkdir -p "$LOG_DIR"
-echo "Network check started at $TIMESTAMP" | tee "$LOG_FILE"
-
-# Loop and check devices
-for DEVICE in "${DEVICES[@]}"; do
-    if ping -c 2 -W 2 "$DEVICE" &>/dev/null; then
-        echo "[OK]   $DEVICE is reachable" | tee -a "$LOG_FILE"
-    else
-        echo "[FAIL] $DEVICE is UNREACHABLE" | tee -a "$LOG_FILE"
-    fi
-done
-
-# Environmental variables
-echo "Running as: $USER"
-echo "Python path: $(which python3)"
-echo "Log saved to: $LOG_FILE"
-
-# Cleanup logs older than 7 days
-find "$LOG_DIR" -name "check_*.log" -mtime +7 -delete
-echo "Old logs cleaned up."
+**YANG Reading Guide:**
+```yang
+module ietf-interfaces {
+  container interfaces {           // group of things
+    list interface {               // repeatable item
+      key "name";
+      leaf name { type string; }   // single value
+      leaf enabled { type boolean; }
+      container statistics {
+        leaf in-octets { type uint64; }
+      }
+    }
+  }
+}
 ```
 
-```bash
-# Other Bash skills to practice
-ls -la /etc/network/              # directory navigation
-cp config.yml config.yml.bak      # file management
-grep "error" /var/log/syslog      # search logs
-export API_KEY="mykey"            # set env variable
-echo $PATH                        # read env variable
-chmod +x script.sh && ./script.sh # make executable and run
+**GitHub commit:** Annotated YANG model + RESTCONF query results in notes.
+
+---
+
+#### Day 25 — CI/CD for Infrastructure + Code Review + Sequence Diagrams
+**Topics:** 5.4, 5.13, 5.14
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | CI/CD for infrastructure: lint → test → deploy stages, pyATS integration (5.4) |
+| 0:45–1:15 | Code review principles: what to look for, why it matters (5.13) |
+| 1:15–2:30 | **Hands-on:** Interpret 2–3 sequence diagrams showing API flows |
+
+**Sequence diagram reading checklist:**
+- Who is the initiator? (client, user, system)
+- What HTTP verb + endpoint is called?
+- What does each response contain?
+- Where are auth tokens passed?
+- What happens on error?
+
+**GitHub commit:** Sequence diagram interpretation examples in notes.
+
+---
+
+#### Day 26 — Network Simulation + pyATS + Unified Diff
+**Topics:** 5.3, 5.12, 1.8.g
+
+| Time | Activity |
+|------|----------|
+| 0:00–0:45 | Cisco Modeling Labs (CML) and pyATS roles in network testing (5.3) |
+| 0:45–1:15 | Reading unified diffs: + lines (added), - lines (removed), @@ context markers (5.12) |
+| 1:15–2:30 | **Hands-on:** Use `git diff` on your own repo, read the output carefully |
+
+```diff
+@@ -10,7 +10,8 @@
+ def get_devices(token):
+-    url = "http://old-api/devices"
++    url = "https://new-api/v2/devices"
++    # Updated to use HTTPS and v2 endpoint
+     resp = requests.get(url, headers={"X-Token": token})
 ```
 
-#### GitHub Note to Write
-- `06-network-fundamentals/networking-review.md` — ports table, plane definitions, troubleshooting checklist
+**GitHub commit:** Diff interpretation guide in `cheatsheets/`.
 
 ---
 
-### DAY 14 — Full Review + Mock Exam + GitHub Polish
-**Exam coverage:** All domains
+#### Day 27 — Python Script Interpretation + Ansible Playbook Reading
+**Topics:** 5.7, 5.8, 5.9
 
-#### Morning: Weak Area Blitz (2h)
-Go through your GitHub notes. Find any topics with sparse notes — that's a weak area. Focus on whichever of these you're least confident about:
-- Unified diff interpretation (5.12)
-- Sequence diagrams with API calls (5.14)
-- Code review principles (5.13)
-- Cisco security platforms overview (3.5) — XDR, Firepower, ISE, Secure Endpoint
-- OWASP threats recap (4.10)
-- ACI hierarchy: Tenant → App Profile → EPG → Contract
+| Time | Activity |
+|------|----------|
+| 0:00–1:30 | Practice reading Python scripts that use ACI, Meraki, RESTCONF — identify the workflow |
+| 1:30–2:30 | Practice reading Ansible playbooks and bash scripts — identify every action |
 
-#### Afternoon: GitHub Second Brain Polish (1.5h)
-```bash
-# Polish your repo before the exam
-cd ccna-auto-notes
-# Update README.md with a full topic index
-# Create QUICK-REFERENCE.md as your personal cheat sheet:
-#   - HTTP status codes you always forget
-#   - Git commands in order
-#   - Docker commands
-#   - Port numbers table
-#   - REST vs NETCONF vs RESTCONF comparison
-git add . && git commit -m "Day 14: Final review + polish" && git push
-```
+**Exam skill:** Given a script, answer: *What is it doing? In what order? What API does it call?*
 
-#### Evening: Simulate Exam Conditions (1h)
-- Take a timed practice test (Boson, Pearson, or DevNet practice questions)
-- Review wrong answers against your GitHub notes
-- For any gaps, add a note to the relevant file immediately
+Practice source: `https://github.com/CiscoDevNet/` — read real examples there.
+
+**GitHub commit:** Your own annotated versions of 2–3 scripts you found and understood.
 
 ---
 
-## 📊 Domain Coverage Summary
+#### Day 28 — Full Domain Review Sprint
+| Time | Activity |
+|------|----------|
+| All session | Speed-run all 6 domains. One page of notes per domain from memory, then compare to your repo. |
 
-| Domain | % Weight | Days Covered |
-|--------|----------|-------------|
-| 1.0 Software Development & Design | 15% | 1, 2, 3 |
-| 2.0 Understanding & Using APIs | 20% | 4, 5 |
-| 3.0 Cisco Platforms & Development | 15% | 6, 7 |
-| 4.0 Application Deployment & Security | 15% | 8, 9 |
-| 5.0 Infrastructure & Automation | 20% | 10, 11, 12 |
-| 6.0 Network Fundamentals | 15% | 13 |
-| Review & Integration | — | 7, 14 |
+**Focus on highest-weight domains:**
+- Domain 2 (APIs) — 20%
+- Domain 5 (Infrastructure) — 20%
 
 ---
 
-## 🔑 DevNet Sandboxes (Free — Use These for Labs)
+#### Day 29 — Timed Practice Exam + Gap Analysis
+| Time | Activity |
+|------|----------|
+| 0:00–1:30 | Take a full 60–80 question practice test (use Boson, MeasureUp, or Cisco U) |
+| 1:30–2:30 | For every wrong answer: find the topic, go to your notes, write a one-line correction |
 
-| Resource | URL | Used On |
-|----------|-----|---------|
-| Catalyst Center Always-On | `sandboxdnac.cisco.com` | Day 5, 6 |
-| IOS XE Always-On | `sandbox-iosxe-latest-1.cisco.com` | Day 10 |
-| Meraki Dashboard | `api.meraki.com` (demo key) | Day 6 |
-| Webex Developer | `developer.webex.com` | Day 7 |
-| DevNet Sandbox Portal | `developer.cisco.com/sandbox` | All |
+**GitHub commit:** `EXAM_READINESS.md` — honest assessment of strong vs weak areas.
 
 ---
 
-## 💡 GitHub Second Brain — Pro Tips
+#### Day 30 — Light Review + Second Brain Final Update
+| Time | Activity |
+|------|----------|
+| 0:00–1:30 | Review your cheatsheets only — no new material |
+| 1:30–2:00 | Update README: mark all topics ✅ |
+| 2:00–2:30 | Rest. You're ready. |
 
-1. **Commit daily, no exceptions** — even just a daily log entry counts
-2. **Use GitHub Issues** as a study TODO list — open an issue for each weak topic, close it when solid
-3. **Use GitHub Actions** to auto-lint your Python scripts on every push — free CI/CD practice
-4. **Pin your repo** on your GitHub profile — shows employers you're an active practitioner
-5. **Add a `QUICK-REFERENCE.md`** — writing it IS the studying
-
-```yaml
-# .github/workflows/lint.yml — free CI/CD for your notes repo
-name: Lint Python Scripts
-on: [push]
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with: {python-version: '3.11'}
-      - run: pip install flake8
-      - run: flake8 --max-line-length=100 **/*.py
-```
+**Final GitHub commit:** `"Day 30: Ready to take the exam 🚀"`
 
 ---
 
-*Good luck! The goal is to become an automation practitioner — the exam is just proof of the work.*
+## 📌 Key Resources
+
+| Resource | URL |
+|----------|-----|
+| Cisco DevNet Sandbox | https://devnetsandbox.cisco.com |
+| DevNet Learning Labs | https://developer.cisco.com/learning/ |
+| Cisco API Docs | https://developer.cisco.com/docs/ |
+| httpbin (API testing) | https://httpbin.org |
+| Cisco Code Exchange | https://developer.cisco.com/codeexchange/ |
+| pyATS docs | https://developer.cisco.com/docs/pyats/ |
+| YANG Catalog | https://yangcatalog.org |
+| Webex Developer | https://developer.webex.com |
+
+---
+
+## 🧠 Second Brain Rules (Commit to These)
+
+1. **Write before you copy.** Summarize in your own words first, then add code.
+2. **Every concept gets an example.** No naked definitions in your notes.
+3. **Commit every day.** Even if it's just a single line. The streak is the habit.
+4. **One cheatsheet per domain.** The cheatsheet is what you open the morning of the exam.
+5. **Link your scripts to the topic.** Each script in your repo should have a comment at the top: `# Covers exam topic: 2.9 — Python REST API with requests library`
+
+---
+
+*Good luck. The second brain you build during these 30 days will serve you long after the exam.*
